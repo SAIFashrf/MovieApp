@@ -1,115 +1,231 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MaterialApp(home: Jinx()));
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+class Jinx extends StatefulWidget {
+  const Jinx({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
+  @override
+  State<Jinx> createState() => _JinxState();
+}
+
+class _JinxState extends State<Jinx> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or simply save your changes to "hot reload" in a Flutter IDE).
-        // Notice that the counter didn't reset back to zero; the application
-        // is not restarted.
-        primarySwatch: Colors.blue,
-      ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
-
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
     return Scaffold(
-      appBar: AppBar(
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
-      ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Invoke "debug painting" (press "p" in the console, choose the
-          // "Toggle Debug Paint" action from the Flutter Inspector in Android
-          // Studio, or the "Toggle Debug Paint" command in Visual Studio Code)
-          // to see the wireframe for each widget.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
-          mainAxisAlignment: MainAxisAlignment.center,
+      bottomNavigationBar: BottomAppBar(
+        shape: CircularNotchedRectangle(),
+        notchMargin: 8.0,
+        child: Row(
+          mainAxisSize: MainAxisSize.max,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
+            IconButton(
+              icon: Icon(
+                Icons.search,
+              ),
+              onPressed: () {},
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
+            SizedBox(width: 48.0),
+            IconButton(
+              icon: Icon(
+                Icons.filter_list,
+              ),
+              onPressed: () {},
             ),
           ],
         ),
       ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+        backgroundColor: Color.fromRGBO(177, 24, 75, 1),
+        child: Icon(Icons.home),
+        onPressed: () {},
+      ),
+      backgroundColor: Colors.black,
+      body: Column(
+        children: [
+          Row(
+            children: [
+              Expanded(
+                  child: Container(
+                height: 280,
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage('images/2.jpg'),
+                    fit: BoxFit.fill,
+                  ),
+                ),
+              ))
+            ],
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          Row(
+            children: [
+              Center(
+                child: Container(
+                  margin: EdgeInsets.only(left: 100),
+                  width: 200,
+                  height: 45,
+                  child: Text(
+                    "The boys",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                        fontSize: 35,
+                        color: Colors.white,
+                        fontFamily: 'San Fransisco',
+                        fontWeight: FontWeight.bold),
+                  ),
+                ),
+              ),
+            ],
+          ),
+          Row(
+            children: [
+              Center(
+                child: Container(
+                  margin: EdgeInsets.only(left: 100),
+                  width: 200,
+                  height: 10,
+                  child: Text(
+                    "2019 ‧ Action fiction ‧ 3 seasons",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                        fontSize: 10,
+                        color: Color.fromARGB(255, 175, 174, 174),
+                        fontFamily: 'San Fransisco'),
+                  ),
+                ),
+              ),
+            ],
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          Row(
+            children: <Widget>[
+              Container(
+                margin: EdgeInsets.only(left: 118),
+                child: Icon(
+                  Icons.star,
+                  color: Colors.pink,
+                  size: 35.0,
+                ),
+              ),
+              Icon(
+                Icons.star,
+                color: Colors.pink,
+                size: 35.0,
+              ),
+              Icon(
+                Icons.star,
+                color: Colors.pink,
+                size: 35.0,
+              ),
+              Icon(
+                Icons.star,
+                color: Color.fromARGB(255, 95, 92, 93),
+                size: 35.0,
+              ),
+              Icon(
+                Icons.star,
+                color: Color.fromARGB(255, 95, 92, 93),
+                size: 35.0,
+              ),
+            ],
+          ),
+          SizedBox(
+            height: 23,
+          ),
+          Row(
+            children: [
+              Container(
+                margin: EdgeInsets.only(left: 15),
+                width: 380,
+                height: 210,
+                child: Text(
+                  "The Boys is surprisingly an amazing show, It's fun, violent, deliciously filthy, black-humored superhero genre deconstruction. What makes 'The Boys' so special and unique is its premise based on the Comic Book it gives the unorthodox concept for Superheroes. A very well-written show with a good sense of pace along with so many boundaries pushed. Both the seasons are gripping from start to finish, despite falling into few cliches. The action sequences are wildly entertaining, effing brutal, and sufficiently gory. Dialogues are fantastic, Direction is great, Cinematography is good, BGM is brilliant.",
+                  textAlign: TextAlign.center,
+                  //maxLines: 3,
+                  //overflow: TextOverflow.clip,
+                  style: TextStyle(
+                      fontSize: 12.5,
+                      color: Color.fromRGBO(241, 241, 241, 1),
+                      fontFamily: 'San Fransisco'),
+                ),
+              ),
+            ],
+          ),
+          SizedBox(
+            height: 15,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              Container(
+                width: 385,
+                height: 50,
+                child: ElevatedButton.icon(
+                  onPressed: () => null,
+                  label: const Text('Watch Trailer'),
+                  icon: const Icon(Icons.camera),
+                  style: ElevatedButton.styleFrom(
+                    primary: Color.fromARGB(255, 167, 68, 101),
+                    textStyle: TextStyle(
+                      color: Colors.white,
+                      fontSize: 15,
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+          SizedBox(
+            height: 7,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Container(
+                width: 185,
+                height: 50,
+                child: ElevatedButton.icon(
+                  onPressed: () => null,
+                  icon: const Icon(Icons.local_movies_outlined),
+                  label: const Text('  Watch  '),
+                  style: ElevatedButton.styleFrom(
+                    primary: Color.fromRGBO(177, 24, 75, 1),
+                    textStyle: TextStyle(
+                      color: Colors.white,
+                      fontSize: 17,
+                    ),
+                  ),
+                ),
+              ),
+              Container(
+                width: 185,
+                height: 50,
+                child: ElevatedButton.icon(
+                  onPressed: () => null,
+                  icon: const Icon(Icons.download),
+                  label: const Text('Download'),
+                  style: ElevatedButton.styleFrom(
+                    primary: Color.fromRGBO(177, 24, 75, 1),
+                    textStyle: TextStyle(
+                      color: Colors.white,
+                      fontSize: 17,
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ],
+      ),
     );
   }
 }
