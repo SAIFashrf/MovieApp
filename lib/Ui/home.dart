@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:movie_app/cards.dart';
+import 'package:movie_app/Ui/cards.dart';
 import '../models/movie.dart';
-import '../onbording.dart';
+import 'Intro/onbording.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key}) : super(key: key);
