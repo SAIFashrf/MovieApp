@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:movie_app/Ui/Intro/intro_page1.dart';
 import 'package:movie_app/models/movie.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import '../../Jinx.dart';
 import '../home.dart';
 import 'intro_page2.dart';
 import 'intro_page3.dart';
@@ -55,7 +56,7 @@ class _OnboardingState extends State<Onboarding> {
                 // next and done buttons
                 lastPage ? GestureDetector(
                         onTap: () {
-                          Navigator.push(context, MaterialPageRoute(builder: (context) => MyHomePage(),));
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => Jinx(),));
                         },
                         child: Text("done"))
                     : GestureDetector(

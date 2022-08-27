@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:task2/Jinx.dart';
 import 'Jinx.dart';
 
 class Ho extends StatefulWidget {
@@ -33,10 +32,7 @@ Widget buildCard(String y, BuildContext context) => Container(
 class _HoState extends State<Ho> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        backgroundColor: Color.fromRGBO(233, 229, 229, 0.882),
-        body: Container(
+    return Container(
             margin: const EdgeInsets.only(top: 10),
             height: 200,
             child: ListView(scrollDirection: Axis.horizontal, children: [
@@ -46,8 +42,8 @@ class _HoState extends State<Ho> {
               buildCard("4", context),
               buildCard("5", context),
               buildCard("6", context),
-            ])),
-      ),
-    );
+            ]
+            )
+       );
   }
 }
