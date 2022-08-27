@@ -29,6 +29,7 @@ class _MyHomePageState extends State<MyHomePage> {
               images:
                   "https://images.unsplash.com/photo-1607603750909-408e193868c7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
               titles: "hello"),
+
       ],
     ),
         ));
